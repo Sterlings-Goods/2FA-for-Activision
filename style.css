@@ -258,13 +258,18 @@ input#secret::placeholder {
 
 .code-display.copied .copy-overlay .stripe-bg {
   background: #45a29e;
-  font-size: 0; /* This hides the original text */
+  color: transparent; /* Makes the original "COPY CODE" invisible */
+  position: relative;
 }
 
 .code-display.copied .copy-overlay .stripe-bg::before {
   content: "COPIED";
-  font-size: 2rem; /* This sets the size for the new text */
-  color: #000;
+  color: #000; /* Makes the new "COPIED" text visible (black) */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
 }
 
 /* STACKED FOOTER */
