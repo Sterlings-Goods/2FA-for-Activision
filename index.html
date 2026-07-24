@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sterlings Good | Secure Uplink</title>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  
+  <!-- Tactical CRT Overlays -->
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+<!-- Header Section -->
+  <div class="header">
+    <!-- Massive Text Logo (Now Clickable) -->
+    <a href="https://www.eldorado.gg/users/Sterling_Goods/shop/Account" target="_blank" class="mw-logo" style="text-decoration: none;">STERLINGS<span class="cyan-glow">GOOD</span></a>
+    
+    <div class="intel-badge">
+      <span class="amber-dot"></span> GET 2FA CODES HERE
+    </div>
+  </div>
+
+  <!-- Main Authenticator Terminal -->
+  <div class="tactical-panel">
+    
+    <!-- Decorative Military Corners -->
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <!-- Secret Key Input -->
+    <div class="input-wrapper">
+      <div class="input-label">2FA DECRYPTION KEY [BASE32]</div>
+      <input type="text" id="secret" placeholder="ENTER 2FA KEY HERE..." autocomplete="off" />
+    </div>
+
+    <!-- Interface Divider -->
+    <div class="tactical-divider"></div>
+
+    <!-- HUD Elements -->
+    <div class="hud-header">
+      <div class="status">
+        STATUS: <span class="text-amber">ONLINE</span>
+      </div>
+      <div class="timer-wrapper">
+        T-MINUS: <span id="countdown">--</span>s
+      </div>
+    </div>
+    
+    <!-- Code Display (Click to copy) -->
+    <div class="code-display" id="copyBtn">
+      <div id="currentTOTP" class="totp-value">------</div>
+      <div class="copy-overlay">
+        <div class="stripe-bg">Copy Code</div>
+      </div>
+    </div>
+
+    <!-- Stacked Terminal Footer -->
+    <div class="hud-footer">
+      <span>> CODES ARE GENERATED LOCALLY</span>
+      <span>> NO CODES ARE STORED ANYWHERE EXCEPT YOUR DEVICE</span>
+    </div>
+  </div>
+
+  <!-- Hidden elements required by the backend script -->
+  <div style="display: none;">
+    <select id="timeSource"><option value="device"></option></select>
+    <input type="number" id="digits" value="6" />
+    <input type="number" id="period" value="30" />
+    <select id="algorithm"><option value="SHA-1"></option></select>
+    <button id="shareBtn"></button>
+    <div id="nextTOTP"></div>
+  </div>
+
+  <!-- JavaScript for TOTP Logic -->
+  <script src="./script.js"></script>
+</body>
+</html>
