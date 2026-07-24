@@ -258,7 +258,7 @@ input#secret::placeholder {
 
 .code-display.copied .copy-overlay .stripe-bg {
   background: #45a29e;
-  content: "DATA ACQUIRED";
+  content: "COPIED";
 }
 .code-display.copied .copy-overlay .stripe-bg::before {
   content: "COPIED";
