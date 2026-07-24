@@ -261,7 +261,7 @@ input#secret::placeholder {
   content: "DATA ACQUIRED";
 }
 .code-display.copied .copy-overlay .stripe-bg::before {
-  content: "DATA ACQUIRED";
+  content: "COPIED";
 }
 
 /* STACKED FOOTER */
